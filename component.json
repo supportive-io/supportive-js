@@ -1,0 +1,10 @@
+{
+	"name"			: "supportive-js",
+	"repository"	: "supportive-io/supportive-js",
+	"description"	: "A vanilla JS browser library for the Supportive.io API",
+	"version"		: "1.0.0",
+	"keywords"		: [ "supportive.io", "feedback", "support" ],
+	"main" 			: "dist/supportive.js",
+	"scripts"		: [ "dist/supportive.js", "dist/supportive.min.js" ],
+	"license" 		: "MIT"
+}

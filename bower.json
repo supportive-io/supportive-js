@@ -1,0 +1,7 @@
+{
+	"name"		: "supportive-js",
+	"version"	: "1.0.0",
+	"keywords"	: [ "supportive.io", "feedback", "support" ],
+	"main"		: "dist/supportive.js",
+	"license" 	: "MIT"
+}
