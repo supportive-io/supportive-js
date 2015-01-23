@@ -7,12 +7,12 @@ Read the full documentation [here](http://docs.supportive.io/supportive-js).
 ## <a name="install"></a> Install
 
 Via bower:
-```language-bash
+```
 bower install --save supportive-js
 ```
 
 Via npm:
-```language-bash
+```
 npm install --save supportive-js
 ```
 
@@ -22,19 +22,19 @@ npm install --save supportive-js
 
 <p>1. Add the script to your page.</p>
 
-```language-markup
+```html
 <script type="application/javascript" src="<path_to_supportive_js>/supportive.js"></script>
 ```
 
 <p>2. Prepare Supportive.js.</p>
 
-```language-javascript
+```js
 var support = new Supportive( 'your_app_id', 'your_api_token' );
 ```
 
 <p>3. Initialise <a href="http://supportive.io">Supportive.io</a>.</p>
 
-```language-javascript
+```js
 var user =  {
                 identifier  : 'ashheskes',
                 email       : 'ash@supportive.io',
@@ -55,7 +55,7 @@ support. init( user, function( error, user, messages ) {
 
 <p>4. Listen for new messages.</p>
 
-```language-javascript
+```js
 support. on( 'message', function( message ) {
     
     /* do stuff... */
@@ -64,7 +64,7 @@ support. on( 'message', function( message ) {
 
 <p>5. Send a support message.</p>
 
-```language-javascript
+```js
 support. send( 'Feedback!', 'I love your App.', { page : 'home' }, function( error, message ) {
 
     if ( error ) return alert( ':( Something went wrong!' );
