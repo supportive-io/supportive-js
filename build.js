@@ -5,8 +5,6 @@ var FileSystem	= require ( 'fs' ),
 	js_file		= FileSystem. readFileSync ( './supportive.js' ). toString(),
 	ast			= jsProcessor. parser. parse ( js_file );
 
-console. log ( jsProcessor );
-
 ast		= jsProcessor. uglify. ast_mangle ( ast );
 ast		= jsProcessor. uglify. ast_squeeze ( ast );
 js_file	= jsProcessor. uglify. gen_code ( ast );
