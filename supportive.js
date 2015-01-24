@@ -111,7 +111,7 @@ var _ = {
 */
 function request ( options, done ) {
 
-	var url                = options. url,
+	var url				= options. url,
 		method			= options. method. toUpperCase(),
 		headers			= options. headers	|| {  },
 		query_params	= method === 'GET' ? options. data : options. query,
@@ -836,7 +836,7 @@ Collection. prototype = {
 
 			self. trigger ( 'sync', sync_report, self );
 
-			_. fire ( done, null, self );
+			_. fire ( done, null, sync_report, self );
 		} );
 
 		return this;
