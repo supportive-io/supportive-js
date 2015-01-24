@@ -1,6 +1,6 @@
 {
   "name": "supportive-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A vanilla JS browser library for the Supportive.io API",
   "main": "supportive.js",
   "dependencies": {},
