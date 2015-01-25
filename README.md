@@ -17,12 +17,11 @@ npm install --save supportive-js
 ```
 
 Via Download:
-
+<p>
 <a href="https://github.com/supportive-io/supportive-js/releases/latest">
-```
 Download latest version from Github
-```
 </a>
+</p>
 
 ---
 
