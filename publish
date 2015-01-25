@@ -18,8 +18,6 @@ alias ( 'r', 'release' ).
 describe ( 'r', 'Release type i.e major, minor or patch.' ).
 argv;
 
-console. log ( current_version, argv. r, argv );
-
 current_version = semver. inc ( current_version, argv. r );
 
 if ( ! current_version ) return console. log ( 'version could not be incremented' );
