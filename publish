@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+'use strict';
+
+var shell				= require ( 'shelljs' ),
+	argv				= require ( 'yargs' ),
+	semver				= require ( 'semver' ),
+	fs					= require ( 'fs' ),
+	bower_package		= require ( './bower.json' ),
+	npm_package			= require ( './package.json' ),
+	component_package	= require ( './component.json' ),
+	current_version		= bower_package. version;
+
+argv = argv.
+usage ( 'Builds and publishes this package to npm and bower according to --release' ).
+example ( '$0 -r <release>', 'Publish the package incrementing the semver release type of either major, minor or patch' ).
+demand ( 'r' ).
+alias ( 'r', 'release' ).
+describe ( 'r', 'Release type i.e major, minor or patch.' ).
+argv;
+
+console. log ( current_version, argv. r, argv );
+
+current_version = semver. inc ( current_version, argv. r );
+
+if ( ! current_version ) return console. log ( 'version could not be incremented' );
+
+console. log ( '\r\nIncrementing package version to ' + current_version );
+
+bower_package. version		= current_version;
+npm_package. version		= current_version;
+component_package. version	= current_version;
+
+bower_package		= JSON. stringify ( bower_package, null, '\t' );
+npm_package			= JSON. stringify ( npm_package, null, '\t' );
+component_package	= JSON. stringify ( component_package, null, '\t' );
+
+function handleExecOutcome ( exit_code, output ) {
+
+	if ( result. code === 0 ) return; 
+
+	console. log ( 'Last operation failed.' );
+	process. exit ( result. code );
+}
+
+console. log ( '\r\nWriting version to bower.json : ' );
+fs. writeFileSync ( './bower.json', bower_package );
+console. log ( 'done' );
+
+console. log ( '\r\nWriting version to package.json : ' );
+fs. writeFileSync ( './package.json', npm_package );
+console. log ( 'done' );
+
+console. log ( '\r\nWriting version to component.json : ' );
+fs. writeFileSync ( './component.json', component_package );
+console. log ( 'done' );
+
+console. log ( 'Minifiying supportive.js' );
+var result = shell. exec ( './build' );
+
+handleExecOutcome ( result. code, result. output );
+
+console. log ( 'Adding release files ready for commit.' );
+var result = shell. exec ( 'git add ./bower.json ./package.json ./component.json ./supportive.min.js' );
+
+handleExecOutcome ( result. code, result. output );
+
+console. log ( 'Committing release.' )
+var result = shell. exec ( 'git commit -m "Supportive.js ' + current_version + '"' );
+
+handleExecOutcome ( result. code, result. output );
+
+console. log ( 'Adding release tag' );
+var result = shell. exec ( 'git tag -a ' + current_version + ' -m "Supportive.js ' + current_version '"' );
+
+handleExecOutcome ( result. code, result. output );
+
+console. log ( 'Pushing changes.' );
+var result = shell. exec ( 'git push origin master' );
+
+handleExecOutcome ( result. code, result. output );
+
+console. log ( 'Publishing to npm.' );
+var result = shell. exec ( 'npm publish' );
+
+handleExecOutcome ( result. code, result. output );
+
+console. log ( 'Publish completed successfully.' );
+
+process. exit ( 0 );
+
+
