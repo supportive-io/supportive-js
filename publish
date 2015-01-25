@@ -68,7 +68,7 @@ var result = shell. exec ( 'git commit -m "Supportive.js ' + current_version + '
 handleExecOutcome ( result. code, result. output );
 
 console. log ( 'Adding release tag' );
-var result = shell. exec ( 'git tag -a ' + current_version + ' -m "Supportive.js ' + current_version '"' );
+var result = shell. exec ( 'git tag -a ' + current_version + ' -m "Supportive.js ' + current_version + '"' );
 
 handleExecOutcome ( result. code, result. output );
 
