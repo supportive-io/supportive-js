@@ -1,30 +1,33 @@
 {
-  "name": "supportive-js",
-  "version": "1.0.1",
-  "description": "A vanilla JS browser library for the Supportive.io API",
-  "main": "supportive.js",
-  "dependencies": {},
-  "devDependencies": {
-    "node-static": "^0.7.6",
-    "uglify-js": "^1.3.5"
-  },
-  "scripts": {
-    "test": "./node_modules/.bin/static -p 9090 -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}'",
-    "build" : "build.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/supportive-io/supportive-js.git"
-  },
-  "keywords": [
-    "supportive.io",
-    "support",
-    "feedback"
-  ],
-  "author": "Ash Heskes <ash@supportive.io> (http://ashheskes.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/supportive-io/supportive-js/issues"
-  },
-  "homepage": "https://github.com/supportive-io/supportive-js"
+	"name": "supportive-js",
+	"version": "1.1.0",
+	"description": "A vanilla JS browser library for the Supportive.io API",
+	"main": "supportive.js",
+	"dependencies": {},
+	"devDependencies": {
+		"node-static": "^0.7.6",
+		"semver": "^4.2.0",
+		"shelljs": "^0.3.0",
+		"uglify-js": "^1.3.5",
+		"yargs": "^1.3.3"
+	},
+	"scripts": {
+		"test": "./node_modules/.bin/static -p 9090 -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}'",
+		"build": "build.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/supportive-io/supportive-js.git"
+	},
+	"keywords": [
+		"supportive.io",
+		"support",
+		"feedback"
+	],
+	"author": "Ash Heskes <ash@supportive.io> (http://ashheskes.com)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/supportive-io/supportive-js/issues"
+	},
+	"homepage": "https://github.com/supportive-io/supportive-js"
 }

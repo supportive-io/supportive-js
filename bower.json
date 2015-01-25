@@ -1,10 +1,14 @@
 {
-	"name"			: "supportive-js",
-	"version"		: "1.0.1",
-	"homepage"		: "http://docs.supportive.io/supportive-js",
-	"description"	: "A vanilla JS browser library for the Supportive.io API",
-	"keywords"		: [ "supportive.io", "feedback", "support" ],
-	"main"			: "supportive.js",
-	"license"		: "MIT",
-	"authors" 		: "Ash Heskes <ash@supportive.io> (http://ashheskes.com)"
+	"name": "supportive-js",
+	"version": "1.1.0",
+	"homepage": "http://docs.supportive.io/supportive-js",
+	"description": "A vanilla JS browser library for the Supportive.io API",
+	"keywords": [
+		"supportive.io",
+		"feedback",
+		"support"
+	],
+	"main": "supportive.js",
+	"license": "MIT",
+	"authors": "Ash Heskes <ash@supportive.io> (http://ashheskes.com)"
 }

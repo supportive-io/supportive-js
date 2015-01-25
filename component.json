@@ -1,10 +1,17 @@
 {
-	"name"			: "supportive-js",
-	"repository"	: "supportive-io/supportive-js",
-	"description"	: "A vanilla JS browser library for the Supportive.io API",
-	"version"		: "1.0.1",
-	"keywords"		: [ "supportive.io", "feedback", "support" ],
-	"main" 			: "supportive.js",
-	"scripts"		: [ "supportive.js", "supportive.min.js" ],
-	"license" 		: "MIT"
+	"name": "supportive-js",
+	"repository": "supportive-io/supportive-js",
+	"description": "A vanilla JS browser library for the Supportive.io API",
+	"version": "1.1.0",
+	"keywords": [
+		"supportive.io",
+		"feedback",
+		"support"
+	],
+	"main": "supportive.js",
+	"scripts": [
+		"supportive.js",
+		"supportive.min.js"
+	],
+	"license": "MIT"
 }
