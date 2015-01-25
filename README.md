@@ -65,10 +65,13 @@ support. on( 'message', function( message ) {
 <p>5. Send a support message.</p>
 
 ```js
-support. send( 'Feedback!', 'I love your App.', { page : 'home' }, function( error, message ) {
-
-    if ( error ) return alert( ':( Something went wrong!' );
+support. once ( 'init', function (  ) {
     
-    /* do stuff... */
+    support. send( 'Feedback!', 'I love your App.', { page : 'home' }, function( error, message ) {
+
+        if ( error ) return alert( ':( Something went wrong!' );
+        
+        /* do stuff... */
+    } );
 } );
 ```
