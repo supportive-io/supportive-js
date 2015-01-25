@@ -16,6 +16,14 @@ Via npm:
 npm install --save supportive-js
 ```
 
+Via Download:
+
+<a href="https://github.com/supportive-io/supportive-js/releases/latest">
+```
+Download latest version from Github
+```
+</a>
+
 ---
 
 ## <a name="quick-start"></a> Quick Start
