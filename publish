@@ -73,7 +73,7 @@ var result = shell. exec ( 'git tag -a ' + current_version + ' -m "Supportive.js
 handleExecOutcome ( result. code, result. output );
 
 console. log ( 'Pushing changes.' );
-var result = shell. exec ( 'git push origin ' + version );
+var result = shell. exec ( 'git push origin ' + current_version );
 
 handleExecOutcome ( result. code, result. output );
 
