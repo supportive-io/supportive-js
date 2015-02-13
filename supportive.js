@@ -1018,7 +1018,7 @@ Supportive. prototype = {
 
 				self. listenForMessages();
 
-				self. tigger ( 'init', user, messages, self );
+				self. trigger ( 'init', user, messages, self );
 
 				_. fire ( done, null, user, messages, self );
 			} );
