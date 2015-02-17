@@ -300,7 +300,7 @@ function Model ( attributes, config ) {
 	Events. addTo ( this );
 
 	return this;
-};
+}
 
 Model. prototype = {
 
@@ -886,7 +886,12 @@ UserModel. prototype. setCustomData = function ( property, value ) {
 */
 function MessageModel ( attributes, config ) {
 
-	return Model. call ( this, attributes, config );
+	Model. call ( this, attributes, config );
+
+	// By default new messages are outgoing.
+	if ( ! this. get ( 'type' ) ) this. set ( 'type', 'outgoing' );
+
+	return this;
 }
 
 MessageModel. prototype					= new Model();
@@ -1042,12 +1047,12 @@ Supportive. prototype = {
 
 	createMessageModel : function ( attributes ) {
 
-		var MessageModel	= this. constructor. message_model,
+		var MessageModel	= this. constructor. MessageModel,
 			config			= {  };
 
 		config. user		= this. user;
 		config. endpoint	= this. endpoint ( 'messages', true );
-		config. api_token	= api_token;
+		config. api_token	= this. api_token;
 
 		return new MessageModel ( attributes, config );
 	},
